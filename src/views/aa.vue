@@ -7,6 +7,7 @@
 <script setup lang="ts">
 import {useRouter} from "vue-router"
 const router = useRouter()
+// 假装修复
 const jump2 = (): void => {
   router.push({ 
     path:"/b",
