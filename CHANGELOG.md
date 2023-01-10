@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/lvhao01/commitlint/compare/v0.1.0...v0.1.1) (2023-01-10)
+
+
+### Features
+
+* **log:** 添加日志功能 ([6e433e1](https://github.com/lvhao01/commitlint/commit/6e433e10c80dc510d4034563785172c672f58b15))
+
 ## 0.1.0 (2023-01-10)
 
 
