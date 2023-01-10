@@ -11,7 +11,7 @@
 https://www.conventionalcommits.org/zh-hans/v1.0.0/
 https://github.com/zuoxiaobai/commitizen-practice-demo
 
-# commit message  体验low版cz
+# commit message 体验 low 版 cz
 
 ```javascript
 //安装commitizen 及其适配器
@@ -19,7 +19,7 @@ npm install -g commitizen cz-conventional-changelog  # 安装规范化提交插�
 //配置适配器 mac用户
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 //windows用户
-echo { "path": "cz-conventional-changelog" } > C:\Users\12747\.czrc
+echo { "path": "cz-conventional-changelog" } > C:\Users\你的账号\.czrc
 //至此，第一步全局安装Commitizen完成。在任何一个git仓库中运行git cz，就可以通过Commitizen来填写commit message完成提交。
 git cz
 `
@@ -47,24 +47,84 @@ Does this change affect any open issues?
 
 ```
 
-
 # husky + commitlint 提交校验
-  commitlint 结合 husky 可以在 git commit 时校验 commit 信息是否符合规范
-  - 安装 husky
-  ```js
-    npm i husky -D // 安装husky
-    npx husky install // 初始化husky
-    npm set-script prepare "husky install" // 写入script脚本
-    npx husky add .husky/pre-commit "npm test"  // 创建一个hook 再commit-m 前置执行个npm 命令
 
-  ```
-  pre-commit 提交前置hook 会在commit之前执行.husky里的pre-commit文件脚本
-  - 安装commitlint
-  ```js
-  npm install -g @commitlint/cli @commitlint/config-conventional
-  echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js //创建文件写入内容
-  npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"' //配置校验钩子
-  ```
+npm 版本须大于等于 7.24.2，过低的话可能会导致下面有的命令无法使用
+commitlint 结合 husky 可以在 git commit 时校验 commit 信息是否符合规范
+
+- 安装 husky
+
+```js
+  npm i husky -D // 安装husky
+  npx husky install // 初始化husky
+  npm set-script prepare "husky install" // 写入script脚本
+  npx husky add .husky/pre-commit "npm test"  // 创建一个hook 再commit-m 前置执行个npm 命令
+
+
+```
+
+pre-commit 提交前置 hook 会在 commit 之前执行.husky 里的 pre-commit 文件脚本
+
+- 安装 commitlint
+
+```js
+npm i @commitlint/config-conventional @commitlint/cli -S
+
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit ${1}'  // 配置校验提交信息钩子
+
+// 创建.commitlintrc.js配置文件内容如下 自定义提交内容约束
+module.exports = {
+// 继承的规则
+extends: ["@commitlint/config-conventional"],
+// 定义规则类型
+rules: {
+  // type 类型定义，表示 git 提交的 type 必须在以下类型范围内
+  "type-enum": [
+    2,
+    "always",
+    [
+      "feat", // 增加新功能
+      "fix", // 修复 bug
+      "add", // 增加代码逻辑
+      "del", // 删除功能
+      "update", // 更新功能
+      "docs", // 文档相关的改动
+      "style", // 不影响代码逻辑的改动，例如修改空格，缩进等
+      "build", // 构造工具或者相关依赖的改动
+      "refactor", //  代码重构
+      "revert", // 撤销，版本回退
+      "test", // 添加或修改测试
+      "perf", // 提高性能的改动
+      "chore", // 修改 src 或者 test 的其余修改，例如构建过程或辅助工具的变动
+      "ci", // CI 配置，脚本文件等改动
+    ],
+  ],
+  // subject 大小写不做校验
+  "subject-case": [0],
+},
+plugins: [
+  {
+    rules: {
+      "commit-rule": ({ raw }) => {
+        return [
+          /^\[(feat|fix|add|del|update|docs|style|build|refactor|revert|test|perf|chore)].+/g.test(raw),
+          `commit备注信息格式错误，格式为 <[type] 修改内容>，type支持${types.join(",")}`,
+        ];
+      },
+    },
+  },
+],
+};
+
+```
+
+- 测试
+  修改一个文件
+  git add .
+  git commit -m "xxxx"
+
+如果出现了·Error [ERR_REQUIRE_ESM]: require() of ES Module·的报错 说明你的项目不支持 require 模块
+将 package.json 文件 “type”: “module” 去掉
 
 # git 提交的坑
 
