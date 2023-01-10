@@ -11,7 +11,7 @@
 https://www.conventionalcommits.org/zh-hans/v1.0.0/
 https://github.com/zuoxiaobai/commitizen-practice-demo
 
-# 使用手册
+# commit message
 
 ```javascript
 //安装commitizen 及其适配器
@@ -44,10 +44,9 @@ Are there any breaking changes?
 // 是否改变了issues
 Does this change affect any open issues?
 `
-
+// 如果想再code里点击直接
 ```
 
-# commit message
 
 # git 提交的坑
 
