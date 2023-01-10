@@ -124,7 +124,7 @@ plugins: [
   git commit -m "xxxx"
 
 如果出现了·Error [ERR_REQUIRE_ESM]: require() of ES Module·的报错 说明你的项目不支持 require 模块
-将 package.json 文件 “type”: “module” 去掉
+将 package.json 文件 “type”: “module” 去掉 
 
 # git 提交的坑
 
