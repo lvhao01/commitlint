@@ -11,7 +11,7 @@
 https://www.conventionalcommits.org/zh-hans/v1.0.0/
 https://github.com/zuoxiaobai/commitizen-practice-demo
 
-# commit message
+# commit message  体验low版cz
 
 ```javascript
 //安装commitizen 及其适配器
@@ -44,9 +44,27 @@ Are there any breaking changes?
 // 是否改变了issues
 Does this change affect any open issues?
 `
-// 如果想再code里点击直接
+
 ```
 
+
+# husky + commitlint 提交校验
+  commitlint 结合 husky 可以在 git commit 时校验 commit 信息是否符合规范
+  - 安装 husky
+  ```js
+    npm i husky -D // 安装husky
+    npx husky install // 初始化husky
+    npm set-script prepare "husky install" // 写入script脚本
+    npx husky add .husky/pre-commit "npm test"  // 创建一个hook 再commit-m 前置执行个npm 命令
+
+  ```
+  pre-commit 提交前置hook 会在commit之前执行.husky里的pre-commit文件脚本
+  - 安装commitlint
+  ```js
+  npm install -g @commitlint/cli @commitlint/config-conventional
+  echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js //创建文件写入内容
+  npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"' //配置校验钩子
+  ```
 
 # git 提交的坑
 
