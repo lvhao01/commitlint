@@ -126,6 +126,13 @@ plugins: [
 如果出现了·Error [ERR_REQUIRE_ESM]: require() of ES Module·的报错 说明你的项目不支持 require 模块
 将 package.json 文件 “type”: “module” 去掉 
 
+- standard-version（自动生成、打tag）
+```js
+npm install standard-version --save-dev
+npm set-script release "standard-version"
+npm run release
+// 会出现一个changelog日志文件 文件是追加形式的
+```
 # git 提交的坑
 
 在开发中大多技术使用 git 都会遇到文件夹名称大小写修改 push 不上的问题
