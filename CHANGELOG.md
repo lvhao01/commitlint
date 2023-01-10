@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/lvhao01/commitlint/compare/v0.1.1...v0.2.0) (2023-01-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **log.md:** 新的功能新增文档了
+
+### Features
+
+* **log.md:** 新增文档log ([17cd5da](https://github.com/lvhao01/commitlint/commit/17cd5dae7b03c2b8acb8f045f28df500aaa25c34))
+
 ### [0.1.1](https://github.com/lvhao01/commitlint/compare/v0.1.0...v0.1.1) (2023-01-10)
 
 
