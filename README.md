@@ -62,7 +62,7 @@ Does this change affect any open issues?
 **npm 版本须大于等于 7.24.2，过低的话可能会导致下面有的命令无法使用
 commitlint 结合 husky 可以在 git commit 时校验 commit 信息是否符合规范**
 
-
+ 11
 
 - 安装 husky
 
