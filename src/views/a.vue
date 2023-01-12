@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-// 关闭issues
+// 关闭issues 了啊
 </script>
 
 <style scoped lang="less">
