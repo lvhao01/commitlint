@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/lvhao01/commitlint/compare/v0.2.0...v0.2.1) (2023-01-12)
+
+
+### Features
+
+* xxx ([f00828a](https://github.com/lvhao01/commitlint/commit/f00828a19cfbb791938f13748aede392586ee00a))
+
+
+### Bug Fixes
+
+* 关闭issues ([#4](https://github.com/lvhao01/commitlint/issues/4)) ([074b6f4](https://github.com/lvhao01/commitlint/commit/074b6f48e1632e0f8c14810857648ecc9e5e3e7d))
+* 修复issues([#4](https://github.com/lvhao01/commitlint/issues/4)) ([14f69e4](https://github.com/lvhao01/commitlint/commit/14f69e4ec8c1ce3467ef8570a3f0fa0b414ef28b))
+
 ## [0.2.0](https://github.com/lvhao01/commitlint/compare/v0.1.1...v0.2.0) (2023-01-10)
 
 
