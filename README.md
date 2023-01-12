@@ -13,7 +13,7 @@
 
 # 参照物
 
-[VUE](https://github.com/vuejs/vue)
+[VUE](https://github.com/vuejs/core)
 
 [element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
