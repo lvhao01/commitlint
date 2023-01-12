@@ -1,5 +1,5 @@
 # 使用本仓库
-   - 安装commitizen 上面有步骤
+   - 安装commitizen 下面有步骤
    - npm i
    - 修改文件尝试一次提交吧
 
